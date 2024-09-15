@@ -15,7 +15,6 @@ import { useRef } from "react";
 
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { fromJSON } from "postcss";
 
 
 
@@ -65,8 +64,9 @@ export const HeroParallax = () => {
   return (
     <div
       ref={parallax}
-      className="header h-[400vh] overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="header h-[300vh] overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
+      
       <div className="">
         <Header />
       </div>
@@ -78,8 +78,10 @@ export const HeroParallax = () => {
             translateY,
             opacity,
           }}
-          className=""
+          className="relative"
         >
+
+          
           <motion.div className="flex flex-row-reverse space-x-reverse space-x-20 mb-20">
             {firstRow.map((project) => (
               <ProjectCard
@@ -127,7 +129,6 @@ export const ProjectCard = ({
   translate: MotionValue<number>;
 }) => {
   const Imagepath = `/projects/${project.name}.jpg`
-  console.log(Imagepath);
   return (
     <motion.div
       style={{
@@ -140,7 +141,7 @@ export const ProjectCard = ({
       className="group/project h-96 w-[30rem] relative flex-shrink-0"
     >
       <Link
-        href={project.link}
+        href={`projects/${project.id}`}
         className="block group-hover/project:shadow-2xl "
       >
         <Image
