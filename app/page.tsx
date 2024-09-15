@@ -7,6 +7,7 @@ import gsap from "gsap";
 
 import { Source_Code_Pro } from "next/font/google";
 import { Poppins } from "next/font/google";
+import Navigation from "./components/navigation";
 
 const scp = Source_Code_Pro({
   subsets: ['latin'],
@@ -26,7 +27,7 @@ export default function Home() {
   return (
     <div >
        <div ref={intro} id="introCon" style={{color: textColor}}  className=' overflow-hidden flex flex-col h-screen w-[100%] absolute justify-center place-items-center bg-black text-4xl'>
-            
+          
             <TypeAnimation 
             style={{whiteSpace: "pre-line"}}
             className={scp.className}
@@ -65,7 +66,9 @@ export default function Home() {
         </div>
         {introComplete && (
           <div className={pop.className}>
+              <Navigation />
               <HeroParallax />
+              
           </div>
         )}
     </div>
