@@ -1,5 +1,5 @@
 import next from "next";
-import { IconHome, IconTerminal2, IconNewSection, IconExchange, IconBrandX, IconBrandGithub } from "@tabler/icons-react";
+import { IconHome, IconBrandGithub, IconBrandLinkedin, IconBrandFacebook, IconUser, IconBriefcase2 } from "@tabler/icons-react";
 import { FloatingDock } from "./floating-dock";
 
 export default function Navigation(){
@@ -10,49 +10,49 @@ export default function Navigation(){
           icon: (
             <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />
           ),
-          href: "/",
+          href: "/home",
         },
       
         {
-          title: "Products",
+          title: "About me",
           icon: (
-            <IconTerminal2 className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+            <IconUser className="h-full w-full text-neutral-500 dark:text-neutral-300" />
           ),
-          href: "#",
+          href: "#about",
         },
         {
-          title: "Components",
+          title: "Projects",
           icon: (
-            <IconNewSection className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+            <IconBriefcase2 className="h-full w-full text-neutral-500 dark:text-neutral-300" />
           ),
-          href: "/projects/1",
+          href: "/projects",
         },
         {
-          title: "Changelog",
+          title: "Facebook",
           icon: (
-            <IconExchange className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+            <IconBrandFacebook className="h-full w-full text-neutral-500 dark:text-neutral-300" />
           ),
-          href: "#",
+          href: "https://www.facebook.com/GarciaAntonioJr/",
         },
       
-        {
-          title: "Twitter",
-          icon: (
-            <IconBrandX className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-          ),
-          href: "#",
-        },
         {
           title: "GitHub",
           icon: (
             <IconBrandGithub className="h-full w-full text-neutral-500 dark:text-neutral-300" />
           ),
-          href: "#",
+          href: "https://github.com/2nieGarcia",
+        },
+        {
+          title: "LinkedIn",
+          icon: (
+            <IconBrandLinkedin className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+          ),
+          href: "https://www.linkedin.com/in/GarciaAntonioJr",
         },
       ];
     
     return(
-        <div className="fixed right top-10 right-10 flex z-50">
+        <div className="fixed right top-[90%] md:top-10 right-10 flex z-50">
           <div className="flex items-center justify-center w-full">
               <FloatingDock
                 items={links}

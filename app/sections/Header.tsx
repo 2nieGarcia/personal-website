@@ -15,14 +15,14 @@ export default function Header(){
         
 
 
-        <div className="max-w-7xl mx-[10vh] py-20 md:py-40 px-4 w-full  left-0 top-0">
+        <div className="max-w-7xl mx-0 md:mx-[10vh] py-20 md:py-40 px-4 w-full  left-0 top-0">
             <div>
-                <div className="min-h-[60vh] flex flex-col max-w-7xl py-10 md:py-30 px-2 w-full  left-0 top-0">
+                <div className="min-h-[60vh] flex flex-col max-w-7xl py-10 md:py-30 px-1 w-full  left-0 top-0">
 
                 <p className="font-bold text-gray-400">Hello! I am</p>
                 <TypeAnimation 
                     cursor={false}
-                    className="mt-[3vh] mb-[10vh] text-2xl md:text-7xl font-bold dark:text-white" 
+                    className="mt-[3vh] mb-[10vh] text-6xl md:text-7xl font-bold dark:text-white" 
                     sequence={[
                         800,
                         "Antonio Garcia",
@@ -47,7 +47,7 @@ export default function Header(){
             </div>
         </div>
         </div>
-        <div className="absolute flex text-2xl md:text-7xl inset-x-0 bottom-0 left-20 translate-y-[50vh]">
+        <div className="absolute flex text-6xl md:text-7xl inset-x-0 bottom-0 left-20 md:left-10 translate-y-[45vh] md:translate-y-[45vh]">
             <h1 className="">Projects</h1>
           </div>
       </div>
