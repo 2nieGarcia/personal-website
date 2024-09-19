@@ -62,7 +62,7 @@ export default function Projects({params}: {params: {projectId: number}}){
                             <div className="w-full md:w-2/3 p-3">
                                 <div className="flex flex-wrap">
                                     {language.map((language) => {
-                                        return language ? <i key={language} className="m-3" ><img src={`/icons/${language}.png`} alt={language} className="w-[5vh] h-[5vh]" /></i> : null;
+                                        return language ? <i key={language} className="m-3" ><Image src={`/icons/${language}.png`} alt={language} width={500} height={500} className="w-[5vh] h-[5vh]" /></i> : null;
                                     })}
                                 </div>
                             </div>
