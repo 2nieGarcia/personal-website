@@ -34,11 +34,11 @@ export default function About() {
         <div>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
           In high school, I took my first programming class and quickly turned coding into a hobby, balancing it with my other schoolwork. 
-          This passion for programming naturally led me to pursue a Bachelor's degree in Computer Science with a focus on Machine Learning.
+          This passion for programming naturally led me to pursue a Bachelor&apos;s degree in Computer Science with a focus on Machine Learning.
           </p>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
           Machine Learning because it represents the future of technology, allowing us to build systems that can learn, adapt, and solve complex problems autonomously. 
-          It's an exciting field with endless potential, from improving decision-making to revolutionizing industries with AI-driven solutions.
+          It&apos;s an exciting field with endless potential, from improving decision-making to revolutionizing industries with AI-driven solutions.
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
@@ -78,8 +78,8 @@ export default function About() {
       content: (
         <div>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4">
-          Looking ahead, I’m excited to continue developing my skills in Machine Learning and software development. 
-          I aim to work on innovative projects that leverage AI to solve real-world challenges, whether it's improving automation, 
+          Looking ahead, I&apos;sm excited to continue developing my skills in Machine Learning and software development. 
+          I aim to work on innovative projects that leverage AI to solve real-world challenges, whether it&apos;s improving automation, 
           enhancing user experiences, or tackling data-driven problems.
           </p>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4">
