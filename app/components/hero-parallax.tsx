@@ -15,6 +15,7 @@ import { useRef } from "react";
 
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { TransitionLink } from "./transitionLink";
 
 
 
@@ -140,18 +141,19 @@ export const ProjectCard = ({
       key={project.id}
       className="group/project h-96 w-[30rem] relative flex-shrink-0"
     >
-      <Link
+      <TransitionLink
         href={`projects/${project.id}`}
         className="block group-hover/project:shadow-2xl "
       >
         <Image
           src={Imagepath}
+          priority
           height="600"
           width="600"
           className="object-cover object-left-top absolute h-full w-full inset-0"
           alt={project.name}
         />
-      </Link>
+      </TransitionLink>
       <div className="absolute inset-0 h-full w-full opacity-0 group-hover/project:opacity-80 bg-black pointer-events-none"></div>
       <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/project:opacity-100 text-white">
         {project.name}

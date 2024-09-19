@@ -8,6 +8,8 @@ import gsap from "gsap";
 import { Source_Code_Pro } from "next/font/google";
 import { Poppins } from "next/font/google";
 import Navigation from "./components/navigation";
+import About from "./sections/About"
+import Footer from "./sections/Footer";
 
 const scp = Source_Code_Pro({
   subsets: ['latin'],
@@ -19,15 +21,15 @@ const pop = Poppins({
   weight:'400'
 })
 
+
 export default function Home() {
   const intro = useRef(null);
   const [textColor, setColor] = useState("white");
   const [introComplete, setIntroStat] = useState(false);
   
   return (
-    <div >
-       <div ref={intro} id="introCon" style={{color: textColor}}  className=' overflow-hidden flex flex-col h-screen w-[100%] absolute justify-center place-items-center bg-black text-4xl'>
-          
+    <div>
+       <div ref={intro} id="introCon" style={{color: textColor}}  className='fixed flex flex-col min-h-screen w-screen justify-center place-items-center bg-black text-4xl z-20'>
             <TypeAnimation 
             style={{whiteSpace: "pre-line"}}
             className={scp.className}
@@ -50,27 +52,45 @@ export default function Home() {
                 400,
                 '',
                 () => {
-                gsap.timeline()
+                  gsap.timeline()
                 
-                .to("#introCon", { opacity: 0})
-                setIntroStat(true);
+                  .to("#introCon", { opacity: 0})
+                  setIntroStat(true);
+              },
+              100,
+              () => {
                 
-            }
+                gsap.to("#nav", {opacity: 1 })
+              }
             ]}
             speed={69}
             wrapper="div"
             repeat={0}
             omitDeletionAnimation={true}
             ></TypeAnimation>
-        
         </div>
+
         {introComplete && (
-          <div className={pop.className}>
-              <Navigation />
-              <HeroParallax />
+          <div id="content" className="hidden ">
+            <div className={pop.className}>
+              <div id="nav" className="opacity-0">
+                <Navigation/>
+              </div>
               
+              <HeroParallax />
+                
+            </div>
+
+            <div>
+              <About />
+            </div>
+
+            <div>
+              < Footer/>
+            </div>
           </div>
         )}
+        
     </div>
   );
 }

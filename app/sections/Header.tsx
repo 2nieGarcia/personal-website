@@ -1,17 +1,38 @@
 'use client'
 import { TypeAnimation } from "react-type-animation";
-import React from "react";
+import React, { useRef } from "react";
 import { useState } from "react";
-
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 
 export default function Header(){
 
     const [isTyping, setTyping] = useState(true);
-
+    const container = useRef(null);
+    
+    
+    useGSAP(() =>{
+      gsap.registerPlugin(ScrollTrigger);
+      
+      const worksAnimation = gsap.timeline()
+          .set("#works", {opacity: 0, yPercent: -850, xPercent: 20 })
+          .to("#works", {opacity: 1, yPercent: 0,xPercent: 0,})
+      ScrollTrigger.create({
+        trigger: ".container",
+        start: "23% 50%",
+        end: "28% 50%",
+        animation: worksAnimation,
+        markers: false,
+        once: false,
+        scrub: 1
+      })
+      
+    }, {scope: container})
 
     return (
-      <div className="relative">
+      <div ref={container} className="relative">
         
 
 
@@ -47,8 +68,10 @@ export default function Header(){
             </div>
         </div>
         </div>
-        <div className="absolute flex text-6xl md:text-7xl inset-x-0 bottom-0 left-20 md:left-10 translate-y-[45vh] md:translate-y-[45vh]">
-            <h1 className="">Projects</h1>
+          <div className="absolute flex text-6xl md:text-7xl inset-x-0 bottom-0 left-20 md:left-10 translate-y-[45vh] md:translate-y-[55vh] text-white">
+            <div className="">
+              <h1 id="works" className="Works">Works</h1>
+            </div>
           </div>
       </div>
       

@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { cn } from "../lib/util";
 import Link from "next/link";
 import { a } from "framer-motion/client";
+import { TransitionLink } from "./transitionLink";
 
 export const Card = React.memo(
   ({
@@ -17,13 +18,13 @@ export const Card = React.memo(
     hovered: number | null;
     setHovered: React.Dispatch<React.SetStateAction<number | null>>;
   }) => (
-    <a href={`/projects/${index + 1}`}>
+    <TransitionLink href={`/projects/${index + 1}` } className="">
         
         <div
         onMouseEnter={() => setHovered(index)}
         onMouseLeave={() => setHovered(null)}
         className={cn(
-            "rounded-md relative bg-gray-100 dark:bg-neutral-900 overflow-hidden h-60 md:h-90 w-full transition-all duration-300 ease-out",
+            "relative bg-gray-100 dark:bg-neutral-900 overflow-hidden h-60 md:h-90 w-full transition-all duration-300 ease-out",
             hovered !== null && hovered !== index && "blur-sm scale-[0.98]"
         )}
         >
@@ -32,7 +33,7 @@ export const Card = React.memo(
                 src={card.src}
                 alt={card.title}
                 fill
-                className="object-cover absolute inset-0"
+                className="object-fit absolute inset-0"
             />
         <div
             className={cn(
@@ -45,7 +46,7 @@ export const Card = React.memo(
             </div>
         </div>
         </div>
-    </a>
+    </TransitionLink>
   )
 );
 
@@ -60,7 +61,7 @@ export function FocusCards({ cards }: { cards: Card[] }) {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
-    <div className="rounded-md p-10 grid grid-cols-1 md:grid-cols-4 gap-5 md:px-8 w-full bg-[rgba(18,18,18)]">
+    <div className=" p-10 grid grid-cols-1 md:grid-cols-3 gap-5 md:px-8 w-full">
       {cards.map((card, index) => (
         <Card
           key={card.title}

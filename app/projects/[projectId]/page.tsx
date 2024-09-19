@@ -5,23 +5,32 @@ import Navigation from "../../components/navigation";
 import project from "../../components/projects.json";
 import Image from "next/image";
 import { IoArrowBackCircleOutline } from "react-icons/io5";
+import { TransitionLink } from "@/app/components/transitionLink";
+import { Source_Code_Pro } from "next/font/google";
 
+const scp = Source_Code_Pro({
+    subsets: ['latin'],
+    weight:"200"
+  })
 export default function Projects({params}: {params: {projectId: number}}){
     const id = params.projectId;
     const language = project[id - 1].language;
 
+
     console.log()
     if (id <= project.length && id > 0){
         return (
-            <div>
-                <div className="absolute align-middle text-2xl md:text-4xl p-10 md:p-15">
-                    <Link
+            <div className="text-white">
+                <div className="absolute align-middle text-2xl md:text-4xl p-10 md:p-15 text-gray-400">
+                    <TransitionLink
                         href={"/projects"}
                         className="flex"
                         >
                          <IoArrowBackCircleOutline />
-                        <h1>Back</h1>
-                    </Link>
+                         <div className={scp.className}>
+                            <h1>Back</h1>
+                         </div>
+                    </TransitionLink>
                 </div>
                 <div className="flex flex-col h-screen w-full p-[15vh] md:pt-[20vh] px-3 md:px-20">
                     <div className="flex flex-col md:flex-row h-[80%]">

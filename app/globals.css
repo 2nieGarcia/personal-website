@@ -2,28 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: black;
+  transition-property: opacity, background, transform, filter;
+  transition-timing-function: ease-in-out;
+  transition-duration: 500ms;
+}
+
+.page-transition{
+  opacity: 0;
+  background: black;
+  transform: translateY(30px);
+  filter: blur(12px);
+}
+.content{
+}
+
+.hidden{
+  display: block;
 }
 
 ::-webkit-scrollbar {
@@ -39,15 +37,4 @@ body {
 ::-webkit-scrollbar-thumb {
   background: rgb(23 23 23 ); 
   border-radius: 100px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555; 
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
 }
